@@ -5,7 +5,7 @@ import { fetchImages } from "./articles-api";
 import Loader from "./components/Loader/Loader";
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
-import BtnLoadMore from "./components/BtnLoadMore/BtnLoadMore";
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
@@ -61,10 +61,10 @@ export default function App() {
       <SearchBar onSearch={handleSearch} />
       {error && <ErrorMessage />}
       {images.length > 0 && (
-        <ImageGallery items={images} openModal={openModal} />
+        <ImageGallery items={images} onImageClick={openModal} />
       )}
       {isLoading && <Loader />}
-      {images.length > 0 && <BtnLoadMore onClick={handleLoadMore} />}
+      {images.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
       {selectedImage && (
         <ImageModal imageUrl={selectedImage} closeModal={closeModal} />
       )}
