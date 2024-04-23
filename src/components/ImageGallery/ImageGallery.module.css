@@ -1,10 +1,7 @@
 .ImageGallery {
   display: grid;
   max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(
-    5,
-    minmax(0, 1fr)
-  ); /* Змінено кількість колонок */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-gap: 16px;
   margin-top: 70px;
   margin-bottom: 50px;
